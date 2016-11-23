@@ -24,6 +24,7 @@ const service = {
 	getSpeechService: (opt) => {
 		process.env.GOOGLE_APPLICATION_CREDENTIALS = opt.GOOGLE_APPLICATION_CREDENTIALS;
 		process.env.GCLOUD_PROJECT = opt.GCLOUD_PROJECT;
+		process.env.CONFIG = opt.CONFIG;
 
 		const googleAuthClient = googleAuth({
 			scopes: [
@@ -75,7 +76,7 @@ const service = {
 					config: {
 						encoding: 'LINEAR16',
 						sampleRate: 16000,
-						languageCode: opt.CONFIG.languageCode
+						languageCode: process.env.CONFIG.languageCode
 					},
 					interimResults: false,
 					singleUtterance: false
