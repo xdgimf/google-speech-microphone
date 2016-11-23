@@ -74,7 +74,8 @@ const service = {
 				streamingConfig: {
 					config: {
 						encoding: 'LINEAR16',
-						sampleRate: 16000
+						sampleRate: 16000,
+						languageCode: opt.CONFIG.languageCode
 					},
 					interimResults: false,
 					singleUtterance: false
